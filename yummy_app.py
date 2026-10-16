@@ -45,6 +45,3 @@ class YummyApp :
             return RESTAURANTS_BY_LOCATION.get(location_key, [])
         except gps_service.GPSSignalLostError :
             return " Khong the xac dinh vi tri."
-
-    def test_functions():
-    pass 
