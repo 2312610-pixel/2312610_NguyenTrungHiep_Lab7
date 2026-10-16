@@ -24,6 +24,14 @@ class TestEasyLevel ( unittest . TestCase ) :
         cart = { "pho" : 0}
         self.assertEqual(self.app.calculate_order_total(cart), 0.0)
 
+
+def apply_promo_code(promo_code, os_version, network_status):
+    if network_status == "offline":
+        raise ConnectionError("No internet connection")
+    if promo_code == "SPECIAL_CODE" and os_version == 14:
+        raise ValueError("Invalid OS version for this promo code")
+    return True
+
 class TestMediumLevel(unittest.TestCase):
     """Lớp kiểm thử các kịch bản liên quan đến áp dụng mã giảm giá"""
 
